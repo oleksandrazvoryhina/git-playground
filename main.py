@@ -4,6 +4,7 @@ import random
 
 def congratulate_user():
     print("You win!")
+    print("Congratulation!")
 
 
 def is_game_over():
