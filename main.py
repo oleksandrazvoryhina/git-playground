@@ -70,3 +70,4 @@ while not is_game_over():
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
         if ERRORS_TO_LOSE == errors:
             print("I am so sorry to announced that you cant try any more, because you have lost your attempts")
+            print("You lose:(")
