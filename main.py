@@ -2,6 +2,14 @@ import words_fetcher
 import random
 
 
+def checking_twice_or_more_answer_entering(candidate):
+    if candidate in guesses:
+        print("You can`t enter the same word twice!")
+        return True
+    guesses.append(candidate)
+    return False
+
+
 def congratulate_user():
     print(f"Congratulations, you won! your words: {guesses}")
     print("=============================")
@@ -47,6 +55,9 @@ while not is_game_over():
     if not guess_is_valid(guess):
         continue
 
+    if checking_twice_or_more_answer_entering(guess):
+        continue
+
     if guess in full_list:
         guessed += 1
         guesses.append(guess)
@@ -57,3 +68,5 @@ while not is_game_over():
     else:
         errors += 1
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+        if ERRORS_TO_LOSE == errors:
+            print("I am so sorry to announced that you cant try any more, because you have lost your attempts")
